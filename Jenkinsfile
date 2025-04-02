@@ -3,8 +3,10 @@ pipeline {
     
     stages {
            stage('clean'){
+		   steps{
 		   bat 'mvn clean compile'
 		   echo 'compile'
+		   }
 	   }   
     }
 }
