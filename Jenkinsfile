@@ -1,15 +1,16 @@
 pipeline {
     agent any
-	tools{
-		maven:'maven'
-	}
-    
+
+    tools {
+        maven 'maven1'  // Ensure this name matches the one in Jenkins
+    }
+
     stages {
-           stage('clean'){
-		   steps{
-		   bat 'mvn clean compile'
-		   echo 'compile'
-		   }
-	   }   
+        stage('Clean') {
+            steps {
+                    sh 'mvn clean install'
+                
+            }
+        }
     }
 }
